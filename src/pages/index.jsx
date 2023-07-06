@@ -1,19 +1,27 @@
 import { Box, Button, Container, Link, Typography } from "@mui/material";
 
+import Layout from "@/components/Layout";
+
 export default function Home() {
+  const title = "YouTube";
+
   return (
-    <Container maxWidth="sm">
-    <Box sx={{ my: 4 }}>
-      <Typography variant="h4" component="h1" gutterBottom>
-        Clone do Youtube
-      </Typography>
+    <Container maxWidth="lg">
+      <Layout title={title}>
+        <Typography variant="h4">
+          Clone do {title}
+        </Typography>
 
-      <Box>
-        <Button color="primary" variant="contained" >teste</Button>
-        <Button color="secondary" variant="outlined" >teste</Button>
-      </Box>
-
-    </Box>
-  </Container>
+        <Box>
+          <Button color="primary" variant="contained">
+            teste
+          </Button>
+          <Box>&nbsp;</Box>
+          <Button color="secondary" variant="outlined">
+            teste
+          </Button>
+        </Box>
+      </Layout>
+    </Container>
   );
 }

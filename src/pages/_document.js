@@ -12,9 +12,13 @@ export default function MyDocument(props) {
       <Head>
         {/* PWA primary color */}
         <meta name="theme-color" content={theme.palette.primary.main} />
-        <link rel="shortcut icon" href="/favicon.ico" />
         <meta name="emotion-insertion-point" content="" />
         {emotionStyleTags}
+        <link
+          rel="shortcut icon"
+          href="https://www.youtube.com/s/desktop/922a06b5/img/favicon.ico"
+          type="image/x-icon"
+        ></link>
       </Head>
       <body>
         <Main />
