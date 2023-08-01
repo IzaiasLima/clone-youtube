@@ -1,10 +1,9 @@
-import theme from "@/pages/theme";
-import { makeStyles } from "@mui/styles";
+import { makeStyles } from "@material-ui/styles";
 import Head from "next/head";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    backgroundColor: theme.palette.background.dark,
+    // backgroundColor: theme.palette.background.dark,
     display: "flex",
     flexDirection: "column",
     height: "100vh",
@@ -47,7 +46,7 @@ export default function Layout({ children, title }) {
         <div>navbar</div>
         <div className={classes.wrapper}>
           <div className={classes.contentContainer}>
-            <div  className={classes.content}>{children}</div>
+            <div className={classes.content}>{children}</div>
           </div>
         </div>
       </div>
