@@ -1,6 +1,8 @@
 import { makeStyles } from "@material-ui/styles";
 import Head from "next/head";
 
+import Topbar from  "./Topbar";
+
 const useStyles = makeStyles((theme) => ({
   root: {
     // backgroundColor: theme.palette.background.dark,
@@ -42,7 +44,7 @@ export default function Layout({ children, title }) {
         <title>{title}</title>
       </Head>
       <div className={classes.root}>
-        <div>topbar</div>
+        <Topbar />
         <div>navbar</div>
         <div className={classes.wrapper}>
           <div className={classes.contentContainer}>

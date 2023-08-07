@@ -1,5 +1,5 @@
-import { AppBar, Toolbar, makeStyles } from "@mui/material-ui/core";
-import { Box } from "@mui/material-ui/core/Box";
+import { AppBar, Box, Button, Toolbar, makeStyles } from "@material-ui/core";
+import MenuIcon from "@material-ui/icons/Menu";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -7,17 +7,35 @@ const useStyles = makeStyles((theme) => ({
     zIndex: theme.zIndex.drawer + 1,
     backgroundColor: theme.palette.background.default,
   },
+  toolbar: {
+    minHeight: 56,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+  },
+  logo: {
+    cursor: "pointer",
+    height: 18,
+    marginLeft: theme.spacing(3),
+  },
 }));
 
-export default function TopBar() {
+export default function Topbar() {
   const classes = useStyles();
 
   return (
     <AppBar className={classes.root} color="default">
-      <Toolbar>
-        <Box></Box>
-        <Box></Box>
-        <Box></Box>
+      <Toolbar className={classes.toolbar}>
+        <Box display="flex" alignItems="center">
+          <MenuIcon />
+          <img src="logo-youtube.png" alt="logo" className={classes.logo} />
+        </Box>
+        <Box>AAAA</Box>
+        <Box>
+          <Button color="secondary" variant="outlined">
+            SEARCH
+          </Button>
+        </Box>
       </Toolbar>
     </AppBar>
   );
