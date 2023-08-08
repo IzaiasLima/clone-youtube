@@ -1,5 +1,10 @@
 import { AppBar, Box, Button, Toolbar, makeStyles } from "@material-ui/core";
+import { Paper, InputBase, IconButton } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
+import SearchIcon from "@material-ui/icons/Search";
+import VideoCall from "@material-ui/icons/VideoCall";
+import MoreVert from "@material-ui/icons/MoreVert";
+import Apps from "@material-ui/icons/Apps";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -18,6 +23,16 @@ const useStyles = makeStyles((theme) => ({
     height: 18,
     marginLeft: theme.spacing(3),
   },
+  search: {
+    padding: "2px 4px",
+    display: "flex",
+    alignItems: "center",
+    height: 35,
+    width: 700,
+  },
+  input: {
+    flex: 1,
+  },
 }));
 
 export default function Topbar() {
@@ -30,8 +45,30 @@ export default function Topbar() {
           <MenuIcon />
           <img src="logo-youtube.png" alt="logo" className={classes.logo} />
         </Box>
-        <Box>AAAA</Box>
         <Box>
+          <Paper component="form" className={classes.search}>
+            <InputBase
+              className={classes.input}
+              placeholder="Pesquisar"
+              inputProps={{
+                "aria-label": "search google maps",
+              }}
+            />
+            <IconButton type="submit">
+              <SearchIcon />
+            </IconButton>
+          </Paper>
+        </Box>
+        <Box display="flex">
+          <IconButton>
+            <Apps />
+          </IconButton>
+          <IconButton>
+            <VideoCall />
+          </IconButton>
+          <IconButton>
+            <MoreVert />
+          </IconButton>
           <Button color="secondary" variant="outlined">
             SEARCH
           </Button>
