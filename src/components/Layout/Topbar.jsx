@@ -1,10 +1,12 @@
-import { AppBar, Box, Button, Toolbar, makeStyles } from "@material-ui/core";
+import { AppBar } from "@material-ui/core";
+import { Box, Button, Hidden, Toolbar, makeStyles } from "@material-ui/core";
 import { Paper, InputBase, IconButton } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import SearchIcon from "@material-ui/icons/Search";
 import VideoCall from "@material-ui/icons/VideoCall";
 import MoreVert from "@material-ui/icons/MoreVert";
 import Apps from "@material-ui/icons/Apps";
+import { AccountCircle } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -45,20 +47,22 @@ export default function Topbar() {
           <MenuIcon />
           <img src="logo-youtube.png" alt="logo" className={classes.logo} />
         </Box>
-        <Box>
-          <Paper component="form" className={classes.search}>
-            <InputBase
-              className={classes.input}
-              placeholder="Pesquisar"
-              inputProps={{
-                "aria-label": "search google maps",
-              }}
-            />
-            <IconButton type="submit">
-              <SearchIcon />
-            </IconButton>
-          </Paper>
-        </Box>
+        <Hidden mdDown>
+          <Box>
+            <Paper component="form" className={classes.search}>
+              <InputBase
+                className={classes.input}
+                placeholder="Pesquisar"
+                inputProps={{
+                  "aria-label": "search google maps",
+                }}
+              />
+              <IconButton type="submit">
+                <SearchIcon />
+              </IconButton>
+            </Paper>
+          </Box>
+        </Hidden>
         <Box display="flex">
           <IconButton>
             <Apps />
@@ -69,8 +73,13 @@ export default function Topbar() {
           <IconButton>
             <MoreVert />
           </IconButton>
-          <Button color="secondary" variant="outlined">
-            SEARCH
+          <Button
+            color="secondary"
+            component="a"
+            startIcon={<AccountCircle />}
+            variant="outlined"
+          >
+            FAZER LOGIN
           </Button>
         </Box>
       </Toolbar>
